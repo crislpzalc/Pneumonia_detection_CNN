@@ -134,8 +134,7 @@ pneumonia-cnn-pytorch
 │   └── visualization.py  # Plotting helpers
 │
 ├── models/               # best_model.pt (generated after training)
-├── figures/              # PNG plots, confusion matrix, model_summary.txt
-├── logs/                 # training_log.csv
+├── figures/              # PNG plots, confusion matrix, model_summary.txt, training_log.csv
 ├── requirements.txt
 └── README.md
 ```
@@ -149,11 +148,6 @@ pneumonia-cnn-pytorch
 * Hyper-parameter sweep (learning rate, batch size, optimiser).
 * Streamlit / Gradio web interface for clinicians.
 
----
-
-## License
-
-This project is licensed under the **MIT License** – you are free to use, modify and distribute it.
 
 ---
 
