@@ -146,8 +146,8 @@ pneumonia-cnn-pytorch
 │   └── visualization.py  # Plotting utilities
 │
 ├── models/               # best_model.pt (generated)
-├── figures/              # plots, confusion matrix, model summary
-├── logs/                 # training_log.csv
+├── figures/              # plots, confusion matrix, model summary, training_log.csv
+├── data/                  
 ├── requirements.txt
 └── README.md
 ```
