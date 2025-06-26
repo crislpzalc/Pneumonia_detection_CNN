@@ -37,7 +37,7 @@ The project covers data preparation, training with early stopping, metric loggin
 
 ### 1.  Clone the repo
 ````
-git clone [https://github.com/<YOUR-GITHUB-USER>/<YOUR-REPO>.git](https://github.com/crislpzalc/Pneumonia_detection_CNN.git)
+git clone https://github.com/crislpzalc/Pneumonia_detection_CNN.git
 cd Pneumonia_detection_CNN
 ````
 ### 2.  (optional) Create virtual environment
