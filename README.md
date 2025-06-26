@@ -87,6 +87,7 @@ The notebook:
 | **Train / Val / Test** | 60 % / 20 % / 20 %                                           |
 | **Pre-processing**     | Resize → 224 × 224 px  •  Normalise to $-1, 1 $              |
 
+> ⚠️ Due to size constraints, data is not included in the repository.
 ---
 
 ## Model Architecture
@@ -150,7 +151,7 @@ pneumonia-cnn-pytorch
 ├── requirements.txt
 └── README.md
 ```
-
+> ⚠️ Due to file size limits on GitHub, the trained model (`best_model.pt`) is available through the [Google Colab Demo](#demo-google-colab)
 ---
 
 ## Future Work
