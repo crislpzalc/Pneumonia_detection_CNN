@@ -67,7 +67,7 @@ python src/main.py \
 
 Run live inference with the trained model and sample X-rays:
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](YOUR-COLAB-LINK)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1SZy7mXp8qbPJ6tY9aCd-dwvn5efIX2SP?usp=sharing)
 
 The notebook:
 
@@ -151,7 +151,7 @@ pneumonia-cnn-pytorch
 ├── requirements.txt
 └── README.md
 ```
-> ⚠️ Due to file size limits on GitHub, the trained model (`best_model.pt`) is available through the [Google Colab Demo](#demo-google-colab)
+> ⚠️ Due to file size limits on GitHub, the trained model (`best_model.pt`) is available through the [Google Colab Demo](https://colab.research.google.com/drive/1SZy7mXp8qbPJ6tY9aCd-dwvn5efIX2SP?usp=sharing)
 ---
 
 ## Future Work
