@@ -9,7 +9,7 @@ The project covers data preparation, training with early stopping, metric loggin
 
 ---
 
-## 📌 Highlights
+## Highlights
 
 | Feature | Description |
 |---------|-------------|
@@ -21,7 +21,7 @@ The project covers data preparation, training with early stopping, metric loggin
 
 ---
 
-## 🗺️ Table of Contents
+## Table of Contents
 1. [Quick Start](#quick-start)  
 2. [Google Colab Demo](#google-colab-demo)  
 3. [Dataset](#dataset)  
@@ -169,6 +169,6 @@ For any commercial usage, please contact me beforehand.
 
 ---
 
-> **Author:** Cristina L. A.  ·  June 2025
+> **Author:** Cristina L. A., June 2025
 
 ```
