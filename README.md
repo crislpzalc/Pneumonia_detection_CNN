@@ -82,7 +82,7 @@ The notebook:
 
 | Property               | Value                                                        |
 | ---------------------- | ------------------------------------------------------------ |
-| **Source**             | [https://www.kaggle.com/datasets/gonzajl/neumona-x-rays-dataset](#Kaggle – “Neumona X-rays dataset”) |
+| **Source**             | [Kaggle – “Neumona X-rays dataset”](https://www.kaggle.com/datasets/gonzajl/neumona-x-rays-dataset) |
 | **Images**             | 6 298 (≈ 50 % Pneumonia / 50 % Normal)                       |
 | **Train / Val / Test** | 60 % / 20 % / 20 %                                           |
 | **Pre-processing**     | Resize → 224 × 224 px  •  Normalise to $-1, 1 $              |
