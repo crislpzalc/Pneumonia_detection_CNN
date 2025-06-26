@@ -35,19 +35,22 @@ The project covers data preparation, training with early stopping, metric loggin
 
 ## Quick Start
 
-```bash
-# 1  Clone the repo
+### 1  Clone the repo
+````
 git clone https://github.com/<YOUR-GITHUB-USER>/<YOUR-REPO>.git
 cd <YOUR-REPO>
-
-# 2  (optional) create virtual environment
+````
+# 2  (optional) Create virtual environment
+````
 python -m venv .venv
 source .venv/bin/activate           # Windows → .venv\Scripts\activate
-
+````
 # 3  Install dependencies
+````
 pip install -r requirements.txt
-
+````
 # 4  Run the full training pipeline (downloads ≈190 MB)
+````
 python src/main.py \
     --data_dir ./data \
     --model_dir ./models \
@@ -170,5 +173,3 @@ For any commercial usage, please contact me beforehand.
 ---
 
 > **Author:** Cristina L. A., June 2025
-
-```
