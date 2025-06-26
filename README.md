@@ -1,28 +1,27 @@
-# Pneumonia Detection with a Convolutional Neural Network (Python / PyTorch)
+# Pneumonia Detection with a Convolutional Neural Network (PyTorch)
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch)](https://pytorch.org/)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
-
-A complete, reproducible pipeline to detect **pneumonia** from chest-X-ray images using a compact Convolutional Neural Network (CNN) built in PyTorch.  
-The project covers data downloading, preprocessing, training with early stopping, metric logging, visualisation and inference.
+A complete, reproducible pipeline to detect **pneumonia** from chest-X-ray images using a compact Convolutional Neural Network built in PyTorch.  
+The project covers data preparation, training with early stopping, metric logging, visualisation, threshold tuning and inference.
 
 ---
 
-## Highlights
+## 📌 Highlights
 
 | Feature | Description |
 |---------|-------------|
-| **End-to-end code** | Data download, split, training, evaluation, plotting, logging — all in one repo. |
-| **Early Stopping** | Stops training automatically when validation accuracy plateaus. |
-| **Regularisation** | Batch Normalisation and Dropout layers improve generalisation. |
-| **Threshold Tuning** | Custom probability threshold for recall-critical clinical scenarios. |
-| **Google Colab Demo** | Try the trained model interactively — no local setup required. |
+| **End-to-end code** | Download → split → train → evaluate → plots → logs. |
+| **Early Stopping**  | Stops when validation accuracy stops improving. |
+| **Regularisation**  | Batch Normalisation & Dropout. |
+| **Threshold tuning** | Trade-off between recall & precision (important in medicine). |
+| **Google Colab demo** | Run the model in one click, no local setup. |
 
 ---
 
-## Table of Contents
+## 🗺️ Table of Contents
 1. [Quick Start](#quick-start)  
 2. [Google Colab Demo](#google-colab-demo)  
 3. [Dataset](#dataset)  
@@ -41,14 +40,14 @@ The project covers data downloading, preprocessing, training with early stopping
 git clone https://github.com/<YOUR-GITHUB-USER>/<YOUR-REPO>.git
 cd <YOUR-REPO>
 
-# 2  (Optional) create virtual environment
+# 2  (optional) create virtual environment
 python -m venv .venv
-source .venv/bin/activate      # Windows → .venv\Scripts\activate
+source .venv/bin/activate           # Windows → .venv\Scripts\activate
 
 # 3  Install dependencies
 pip install -r requirements.txt
 
-# 4  Run the full training pipeline
+# 4  Run the full training pipeline (downloads ≈190 MB)
 python src/main.py \
     --data_dir ./data \
     --model_dir ./models \
@@ -57,34 +56,33 @@ python src/main.py \
     --lr 0.001
 ````
 
-> **Tip:** use a GPU (Google Colab, Kaggle free GPU or a local CUDA device) for much faster training.
+> **Tip:** a free GPU on Google Colab or Kaggle speeds training dramatically.
 
 ---
 
 ## Google Colab Demo
 
-Run live inference with the trained model and a couple of sample X-rays:
+Run live inference with the trained model and sample X-rays:
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](YOUR-COLAB-LINK)
 
 The notebook:
 
 1. Clones this repository.
-2. Downloads the pretrained weight file.
-3. Runs predictions on sample chest X-ray images.
-4. Displays predicted class and probability.
+2. Downloads `best_model.pt`.
+3. Runs predictions on two sample X-ray images (one NORMAL, one PNEUMONIA).
+4. Displays probabilities and predicted label.
 
 ---
 
 ## Dataset
 
-| Property               | Value                                  |
-| ---------------------- | -------------------------------------- |
-| **Source**             | Kaggle  [link](YOUR-KAGGLE-LINK)       |
-| **Images**             | ≈ 5 000 labelled chest X-rays          |
-| **Classes**            | *NORMAL* & *PNEUMONIA*                 |
-| **Train / Val / Test** | 60 %  /  20 %  /  20 %                 |
-| **Pre-processing**     | Resize → 224×224, normalise to $-1, 1$ |
+| Property               | Value                                                        |
+| ---------------------- | ------------------------------------------------------------ |
+| **Source**             | Kaggle – “Neumona X-rays dataset” ([link](YOUR-KAGGLE-LINK)) |
+| **Images**             | 6 298 (≈ 50 % Pneumonia / 50 % Normal)                       |
+| **Train / Val / Test** | 60 % / 20 % / 20 %                                           |
+| **Pre-processing**     | Resize → 224 × 224 px  •  Normalise to $-1, 1 $              |
 
 ---
 
@@ -97,28 +95,36 @@ Input : 3 × 224 × 224
       └─ Conv(16→32, 3×3) + BatchNorm + ReLU
          └─ MaxPool(2)
             └─ Flatten
-               └─ Linear(32·56·56 → 112) + Dropout(0.5) + ReLU
-                  └─ Linear(112 → 84) + Dropout(0.2) + ReLU
-                     └─ Linear(84 → 2 logits)
+               └─ Linear(100352 → 112) + Dropout(0.5) + ReLU
+                  └─ Linear(112 → 84)   + Dropout(0.2) + ReLU
+                     └─ Linear(84  → 2 logits)
+Total parameters ≈ 11.3 M
 ```
 
-A full parameter summary is saved to `figures/model_summary.txt`.
+Full parameter summary saved to **`figures/model_summary.txt`**.
 
 ---
 
 ## Training & Evaluation Results
 
-| Metric                       | Value    |
-| ---------------------------- | -------- |
-| **Best Validation Accuracy** | **0.95** |
-| **Test Accuracy**            | **0.94** |
-| **AUC-ROC**                  | **0.99** |
-| **Recall @ threshold 0.5**   | **0.98** |
+| Metric (threshold = 0.5)     | Value     |
+| ---------------------------- | --------- |
+| **Best Validation Accuracy** | **0.960** |
+| **Test Accuracy**            | **0.968** |
+| **Test Precision (Pos.)**    | **0.98**  |
+| **Test Recall (Pos.)**       | **0.96**  |
+| **F1-score (macro)**         | **0.97**  |
+| **AUC-ROC**                  | **0.99**  |
 
 <p align="center">
-  <img src="figures/loss_accuracy_plot.png" width="420">
-  <img src="figures/confusion_matrix.png"  width="420">
+  <img src="figures/metrics.png" width="420">
+  <img src="figures/confusion_matrix.png" width="420">
 </p>
+
+### ⚖ Threshold discussion
+
+The default decision threshold (0.5) yields **46 false negatives** (patients with pneumonia predicted as normal).
+In a clinical context we favour **higher recall** to minimise missed cases. Lowering the threshold (e.g. 0.25) eliminates false negatives at the cost of more false positives. The Colab notebook shows how to experiment with different thresholds and visualise precision/recall trade-offs.
 
 ---
 
@@ -126,17 +132,18 @@ A full parameter summary is saved to `figures/model_summary.txt`.
 
 ```
 pneumonia-cnn-pytorch
-├── src/                  # Source code
-│   ├── main.py           # Entry-point script
+├── src/
+│   ├── main.py           # Entry-point script (argparse)
 │   ├── model.py          # CNN definition
 │   ├── train.py          # Training loop + early stopping
-│   ├── evaluate.py       # Evaluation / confusion matrix
+│   ├── evaluate.py       # Validation & test evaluation
 │   ├── dataLoader.py     # DataLoaders
-│   ├── prepareData.py    # Download + split dataset
-│   └── visualization.py  # Plotting helpers
+│   ├── prepareData.py    # Download & split dataset
+│   └── visualization.py  # Plotting utilities
 │
-├── models/               # best_model.pt (generated after training)
-├── figures/              # PNG plots, confusion matrix, model_summary.txt, training_log.csv
+├── models/               # best_model.pt (generated)
+├── figures/              # plots, confusion matrix, model summary
+├── logs/                 # training_log.csv
 ├── requirements.txt
 └── README.md
 ```
@@ -145,26 +152,23 @@ pneumonia-cnn-pytorch
 
 ## Future Work
 
-* Data augmentation (flips, rotations, contrast jitter).
-* Transfer-learning baseline (e.g. ResNet-18).
-* Hyper-parameter sweep (learning rate, batch size, optimiser).
-* Streamlit / Gradio web interface for clinicians.
-
+* Apply data augmentation (random flips, rotations, brightness jitter).
+* Compare against a **ResNet-18** transfer-learning baseline.
+* Hyper-parameter sweep with Optuna (learning-rate, batch size, optimiser).
+* Streamlit / Gradio web interface for clinicians to upload X-rays easily.
 
 ---
+
 ## License
 
-This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
+This work is licensed under a
+[Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
 
-You are free to:
-- Share — copy and redistribute the material
-- Adapt — remix, transform, and build upon the material
-
-**Under the following terms**:
-- Attribution — You must give appropriate credit to the original author.
-- NonCommercial — You may not use the material for commercial purposes.
-
-To use this work commercially, please contact the author.
+You are free to **share** and **adapt** the material **for non-commercial purposes**, provided you give appropriate credit to the author.
+For any commercial usage, please contact me beforehand.
 
 ---
-> **Author:** Cristina L. A.   |   June 2025
+
+> **Author:** Cristina L. A.  ·  June 2025
+
+```
