@@ -150,5 +150,19 @@ pneumonia-cnn-pytorch
 
 
 ---
+## License
 
+This work is licensed under a [Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
+
+You are free to:
+- Share — copy and redistribute the material
+- Adapt — remix, transform, and build upon the material
+
+**Under the following terms**:
+- Attribution — You must give appropriate credit to the original author.
+- NonCommercial — You may not use the material for commercial purposes.
+
+To use this work commercially, please contact the author.
+
+---
 > **Author:** Cristina L. A.   |   June 2025
