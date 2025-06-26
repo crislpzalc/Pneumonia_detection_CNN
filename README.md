@@ -37,8 +37,8 @@ The project covers data preparation, training with early stopping, metric loggin
 
 ### 1.  Clone the repo
 ````
-git clone https://github.com/<YOUR-GITHUB-USER>/<YOUR-REPO>.git
-cd <YOUR-REPO>
+git clone [https://github.com/<YOUR-GITHUB-USER>/<YOUR-REPO>.git](https://github.com/crislpzalc/Pneumonia_detection_CNN.git)
+cd Pneumonia_detection_CNN
 ````
 ### 2.  (optional) Create virtual environment
 ````
@@ -82,7 +82,7 @@ The notebook:
 
 | Property               | Value                                                        |
 | ---------------------- | ------------------------------------------------------------ |
-| **Source**             | Kaggle – “Neumona X-rays dataset” ([link](YOUR-KAGGLE-LINK)) |
+| **Source**             | Kaggle – “Neumona X-rays dataset” (https://www.kaggle.com/datasets/gonzajl/neumona-x-rays-dataset) |
 | **Images**             | 6 298 (≈ 50 % Pneumonia / 50 % Normal)                       |
 | **Train / Val / Test** | 60 % / 20 % / 20 %                                           |
 | **Pre-processing**     | Resize → 224 × 224 px  •  Normalise to $-1, 1 $              |
