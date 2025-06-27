@@ -3,6 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch)](https://pytorch.org/)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-yellow.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1SZy7mXp8qbPJ6tY9aCd-dwvn5efIX2SP?usp=sharing)
 
 A complete, reproducible pipeline to detect **pneumonia** from chest-X-ray images using a compact Convolutional Neural Network built in PyTorch.  
 The project covers data preparation, training with early stopping, metric logging, visualisation, threshold tuning and inference.
@@ -168,4 +169,4 @@ For any commercial usage, please contact me beforehand.
 
 ---
 
-> **Author:** Cristina L. A., June 2025
+> **Author:** [Cristina L. A.](www.linkedin.com/in/cristina-lopez-alcazar), June 2025
