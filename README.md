@@ -63,7 +63,7 @@ python src/main.py \
 
 Run live inference with the trained model and sample X-rays:
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1SZy7mXp8qbPJ6tY9aCd-dwvn5efIX2SP?usp=sharing)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1SZy7mXp8qbPJ6tY9aCd-dwvn5efIX2SP?usp=sharing))
 
 The notebook:
 
