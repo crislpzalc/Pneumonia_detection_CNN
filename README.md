@@ -40,16 +40,11 @@ The project covers data preparation, training with early stopping, metric loggin
 git clone https://github.com/crislpzalc/Pneumonia_detection_CNN.git
 cd Pneumonia_detection_CNN
 ````
-### 2.  (optional) Create virtual environment
-````
-python -m venv .venv
-source .venv/bin/activate           # Windows → .venv\Scripts\activate
-````
-### 3.  Install dependencies
+### 2.  Install dependencies
 ````
 pip install -r requirements.txt
 ````
-### 4.  Run the full training pipeline (downloads ≈190 MB)
+### 3.  Run the full training pipeline (downloads ≈190 MB)
 ````
 python src/main.py \
     --data_dir ./data \
@@ -125,7 +120,7 @@ Full parameter summary saved to **`figures/model_summary.txt`**.
   <img src="figures/confusion_matrix.png" width="420">
 </p>
 
-### ⚖ Threshold discussion
+### Threshold discussion
 
 The default decision threshold (0.5) yields **46 false negatives** (patients with pneumonia predicted as normal).
 In a clinical context we favour **higher recall** to minimise missed cases. Lowering the threshold (e.g. 0.25) eliminates false negatives at the cost of more false positives. The Colab notebook shows how to experiment with different thresholds and visualise precision/recall trade-offs.
