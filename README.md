@@ -169,4 +169,4 @@ For any commercial usage, please contact me beforehand.
 
 ---
 
-> **Author:** [Cristina L. A.](www.linkedin.com/in/cristina-lopez-alcazar), June 2025
+> **Author:** [Cristina L. A.](https://www.linkedin.com/in/cristina-lopez-alcazar/), June 2025
