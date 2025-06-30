@@ -2,8 +2,10 @@
 
 [![Python](https://img.shields.io/badge/Python-3.9%2B-blue?logo=python)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?logo=pytorch)](https://pytorch.org/)
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-yellow.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1SZy7mXp8qbPJ6tY9aCd-dwvn5efIX2SP?usp=sharing)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Hugging Face](https://img.shields.io/badge/Try%20Demo-HuggingFace-yellow?logo=huggingface)](https://huggingface.co/spaces/tu_usuario/tu_space)
+[![Open In Colab](https://img.shields.io/badge/%20Open%20in%20Colab-grey?logo=googlecolab&logoColor=orange&labelColor=grey&color=ffa500)](https://colab.research.google.com/drive/1SZy7mXp8qbPJ6tY9aCd-dwvn5efIX2SP?usp=sharing)
+
 
 A complete, reproducible pipeline to detect **pneumonia** from chest-X-ray images using a compact Convolutional Neural Network built in PyTorch.  
 The project covers data preparation, training with early stopping, metric logging, visualisation, threshold tuning and inference.
@@ -23,14 +25,15 @@ The project covers data preparation, training with early stopping, metric loggin
 ---
 
 ## Table of Contents
-1. [Quick Start](#quick-start)  
-2. [Google Colab Demo](#google-colab-demo)  
-3. [Dataset](#dataset)  
-4. [Model Architecture](#model-architecture)  
-5. [Training & Evaluation Results](#training--evaluation-results)  
-6. [Project Structure](#project-structure)  
-7. [Future Work](#future-work)  
-8. [License](#license)  
+1. [Quick Start](#quick-start)
+2. [Live Web Demo in Hugging Face](#live-web-demo-in-hugging-face)
+3. [Google Colab Demo](#google-colab-demo)  
+4. [Dataset](#dataset)  
+5. [Model Architecture](#model-architecture)  
+6. [Training & Evaluation Results](#training--evaluation-results)  
+7. [Project Structure](#project-structure)  
+8. [Future Work](#future-work)  
+9. [License](#license)  
 
 ---
 
@@ -58,12 +61,27 @@ python src/main.py \
 > **Tip:** a free GPU on Google Colab or Kaggle speeds training dramatically.
 
 ---
+## Live Web Demo in Hugging Face
+
+[![Hugging Face](https://img.shields.io/badge/Try%20Demo-HuggingFace-yellow?logo=huggingface)](https://huggingface.co/spaces/tu_usuario/tu_space)
+
+You can now test the model **directly in the browser** — no setup, no coding — thanks to [Gradio](https://www.gradio.app/) and [Hugging Face Spaces](https://huggingface.co/spaces).
+
+Upload any chest X-ray image and receive:
+- A pneumonia vs. normal prediction
+- A probability score
+- A Grad-CAM heatmap showing model attention
+
+**Try it live**: [huggingface.co/spaces/tu_usuario/tu_space](https://huggingface.co/spaces/CristinaLA/pneumonia-detector)
+
+Code for the demo is available in [`demo_huggingface/`](./demo_huggingface).
 
 ## Google Colab Demo
 
 Run live inference with the trained model and sample X-rays:
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1SZy7mXp8qbPJ6tY9aCd-dwvn5efIX2SP?usp=sharing)
+[![Open In Colab](https://img.shields.io/badge/Open%20in%20Colab-F9AB00?style=flat&logo=googlecolab&logoColor=white)](https://colab.research.google.com/drive/1SZy7mXp8qbPJ6tY9aCd-dwvn5efIX2SP?usp=sharing)
+
 
 The notebook:
 
@@ -155,17 +173,14 @@ pneumonia-cnn-pytorch
 * Apply data augmentation (random flips, rotations, brightness jitter).
 * Compare against a **ResNet-18** transfer-learning baseline.
 * Hyper-parameter sweep with Optuna (learning-rate, batch size, optimiser).
-* Streamlit / Gradio web interface for clinicians to upload X-rays easily.
 
 ---
 
 ## License
 
-This work is licensed under a
-[Creative Commons Attribution-NonCommercial 4.0 International License](https://creativecommons.org/licenses/by-nc/4.0/).
+This project is licensed under the [MIT License](LICENSE).
 
-You are free to **share** and **adapt** the material **for non-commercial purposes**, provided you give appropriate credit to the author.
-For any commercial usage, please contact me beforehand.
+You are free to use, modify, and distribute this code with proper attribution.
 
 ---
 
