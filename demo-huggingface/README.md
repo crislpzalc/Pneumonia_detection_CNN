@@ -1,6 +1,6 @@
 # 🫁 Hugging Face Demo – Pneumonia Detection
 
-This folder contains the code used to deploy the interactive pneumonia detection demo on [Hugging Face Spaces]((https://huggingface.co/spaces/CristinaLA/pneumonia-detector)
+This folder contains the code used to deploy the interactive pneumonia detection demo on [Hugging Face Spaces](https://huggingface.co/spaces/CristinaLA/pneumonia-detector)
 
 The demo allows users to upload a chest X-ray and receive:
 - A prediction (**Pneumonia** or **Normal**)
@@ -21,9 +21,7 @@ The interface is built using **Gradio**, and the model is a simple CNN trained o
 
 ## Try it live
 
-You can try the model online without any setup:
-
-[Live demo on Hugging Face](https://huggingface.co/spaces/CristinaLA/pneumonia-detector)
+You can try the model online without any setup: [Live demo on Hugging Face](https://huggingface.co/spaces/CristinaLA/pneumonia-detector)
 
 ---
 
