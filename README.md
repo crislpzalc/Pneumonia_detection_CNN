@@ -72,7 +72,7 @@ Upload any chest X-ray image and receive:
 - A probability score
 - A Grad-CAM heatmap showing model attention
 
-**Try it live**: [huggingface.co/spaces/tu_usuario/tu_space](https://huggingface.co/spaces/CristinaLA/pneumonia-detector)
+**Try it live**: [huggingface.co/spaces/CristinaLA/pneumonia-detector](https://huggingface.co/spaces/CristinaLA/pneumonia-detector)
 
 Code for the demo is available in [`demo_huggingface/`](./demo_huggingface).
 
@@ -80,7 +80,7 @@ Code for the demo is available in [`demo_huggingface/`](./demo_huggingface).
 
 Run live inference with the trained model and sample X-rays:
 
-[![Open In Colab](https://img.shields.io/badge/Open%20in%20Colab-F9AB00?style=flat&logo=googlecolab&logoColor=white)](https://colab.research.google.com/drive/1SZy7mXp8qbPJ6tY9aCd-dwvn5efIX2SP?usp=sharing)
+[![Open In Colab](https://img.shields.io/badge/%20Open%20in%20Colab-grey?logo=googlecolab&logoColor=orange&labelColor=grey&color=ffa500)](https://colab.research.google.com/drive/1SZy7mXp8qbPJ6tY9aCd-dwvn5efIX2SP?usp=sharing)
 
 
 The notebook:
